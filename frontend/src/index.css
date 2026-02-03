@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===============================
+   GLOBAL RESET & BASE
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family:
+    Inter,
+    Helvetica Neue,
+    Arial,
+    system-ui,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  background-color: theme("colors.bg-primary.light");
+  color: theme("colors.text-primary.light");
+  line-height: 1.5;
+}
+
+/* Dark mode base */
+.dark body {
+  background-color: theme("colors.bg-primary.dark");
+  color: theme("colors.text-primary.dark");
+}
+
+/* ===============================
+   SCROLLBAR (MINIMAL, AJIO STYLE)
+================================ */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #d1d1d1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #b5b5b5;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background-color: #444;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+/* ===============================
+   UTILITIES
+================================ */
+@layer utilities {
+  .transition-smooth {
+    transition: all 0.25s ease-in-out;
+  }
+
+  .text-muted {
+    color: theme("colors.text-muted.light");
+  }
+
+  .dark .text-muted {
+    color: theme("colors.text-muted.dark");
+  }
+}
+
+/* ===============================
+   COMPONENT PRIMITIVES
+================================ */
+@layer components {
+  /* Links (AJIO style: subtle underline on hover) */
+  .link {
+    @apply relative text-sm font-medium transition-colors;
+  }
+
+  .link::after {
+    content: "";
+    @apply absolute left-0 -bottom-1 h-[1px] w-0 bg-current transition-all duration-300;
+  }
+
+  .link:hover::after {
+    width: 100%;
+  }
+
+  /* Primary Button */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-5 py-2 text-xs font-semibold uppercase tracking-wider
+           text-white bg-accent transition-smooth;
+    border-radius: 2px;
+  }
+
+  .btn-primary:hover {
+    background-color: theme("colors.accent.hover");
+  }
+
+  /* Card */
+  .card {
+    @apply bg-bg-surface-light dark:bg-bg-surface-dark;
+    border-radius: 4px;
+  }
+}
