@@ -22,7 +22,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://driveease.vercel.app", //  Vercel URL
+      "https://driveease-three.vercel.app/", //  Vercel URL
     ],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
