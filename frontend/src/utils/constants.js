@@ -1,8 +1,6 @@
-/* ===============================
-   API CONFIG
-================================ */
+// API CONFIG (BASE URL ONLY — NO /api)
 export const API_BASE_URL =
-  import.meta.env.VITE_API_URL || "http://localhost:5000/api";
+  import.meta.env.VITE_API_URL || "http://localhost:5000";
 
 /* ===============================
    VEHICLE DOMAIN CONSTANTS
@@ -60,9 +58,5 @@ export const USER_ROLES = {
   ADMIN: "admin",
 };
 
-/* ===============================
-   UI HELPERS (NON-COLOR)
-================================ */
 export const DATE_FORMAT = "dd MMM yyyy";
-
 export const PRICE_UNIT = "₹ / day";
