@@ -212,10 +212,6 @@ const Navbar = () => {
                     </Link>
                   )}
 
-                  <div className="pt-4 text-xs text-text-muted-light dark:text-text-muted-dark">
-                    Logged in as {user?.name}
-                  </div>
-
                   <button
                     onClick={handleLogout}
                     className="mt-4 flex items-center gap-2 rounded-md px-3 py-2 text-sm transition
